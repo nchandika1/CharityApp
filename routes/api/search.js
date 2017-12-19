@@ -1,3 +1,7 @@
+/*
+ * Defines all routes needed for searching html content
+ */
+
 const request = require("request");
 const db = require("../../models");
 const cheerio = require("cheerio");
@@ -27,7 +31,6 @@ router.get("/volunteer", function(req, res) {
 		let $ = cheerio.load(html);
 		// Add Scrape elements here later
 	});
-
 });
 
 module.exports = router;
