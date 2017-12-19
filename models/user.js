@@ -1,4 +1,4 @@
-// Makes the User Model available to other failes.
+// Makes the User Model available to other files.
 // Also creates the table
 module.exports = function(sequelize, DataTypes) {
 

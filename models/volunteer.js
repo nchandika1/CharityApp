@@ -1,9 +1,9 @@
-// Makes the Donation Model available to other files.
+// Makes the Volunteer Model available to other files.
 // Also creates the table
 module.exports = function(sequelize, DataTypes) {
 
-  // Create User model
-  var Donation = sequelize.define("Donation", {
+  // Create Volunteer model
+  var Volunteer = sequelize.define("Volunteer", {
     orgName: {
       type: DataTypes.STRING
     },
@@ -13,10 +13,10 @@ module.exports = function(sequelize, DataTypes) {
     url: {
       type: DataTypes.STRING
     },
-    donatedAmount: {
+    volunteerHours: {
       type: DataTypes.STRING
     },
-    donatedDate: {
+    dateVolunteered: {
       type: DataTypes.DATE
     },
     favorite: {
@@ -24,14 +24,14 @@ module.exports = function(sequelize, DataTypes) {
     }
   });
 
-  // Donation has a foreign key dependency on User
-  Donation.associate = (models) => {
-    Donation.belongsTo(models.User, {
-      // Donation has to be created for a user so user ID cannot be null
+  // Volunteer has a foreign key dependency on User
+  Volunteer.associate = (models) => {
+    Volunteer.belongsTo(models.User, {
+      // Volunteer has to be created for a user so user ID cannot be null
       foreignKey: {
         allowNull: false
       }
     });
   }
-  return Donation;
+  return Volunteer;
 };
