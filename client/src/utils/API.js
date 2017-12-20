@@ -16,5 +16,10 @@ export default {
   // Saves a book to the database
   saveUser: function(userData) {
     return axios.post("/api/users", userData);
+  },
+  // Get Donations from the database
+  searchDonationsByLocation: function(locationData) {
+    return axios.get("/api/search/donations", locationData);
   }
+
 };

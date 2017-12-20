@@ -1,0 +1,15 @@
+/*
+ * CSS file for styling main content
+ */
+
+html {
+	background-image: url('../../assets/images/girls_homeimage.jpg')
+}
+
+.image-container {
+	background-color: clear;	
+}
+
+h1 {
+	font-size: 60px;
+}
