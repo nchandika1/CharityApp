@@ -1,4 +1,7 @@
 import React from 'react';
+import Header from '../../components/Header';
+import Navigation from '../../components/Nav';
+
 import Content from '../../components/Content';
 
 // require("../assets/index.css")
