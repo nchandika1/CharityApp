@@ -1,20 +1,17 @@
 import React from 'react';
-import { slide as Menu } from 'react-burger-menu'
+import { bubble as Menu } from 'react-burger-menu'
 import "./Nav.css";
 
 class Navigation extends React.Component {
-  showSettings (event) {
-    event.preventDefault();
    
-  }
+ 
 
 	render () {
     return (
-      <Menu>
+      <Menu right >
         <a id="home" className="menu-item" href="/">Home</a>
-        <a id="donations" className="menu-item" href="#">Donations</a>
-        <a id="users" className="menu-item" href="#">Users</a>
-        <a onClick={ this.showSettings } className="menu-item--small" href="">Settings</a>
+        <a id="donations" className="menu-item" href="/donations">Donations</a>
+        <a id="users" className="menu-item" href="/users">Users</a>
       </Menu>
     );
   }

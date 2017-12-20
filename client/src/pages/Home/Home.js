@@ -1,5 +1,5 @@
 import React from 'react';
-import Header from '../../components/Header';
+// import Header from '../../components/Header';
 import Navigation from '../../components/Nav';
 
 import Content from '../../components/Content';
@@ -9,7 +9,8 @@ class Home extends React.Component {
    render() {
       return (
          <div>
-            <Content buttface={true} />            
+            <Content buttface={true} />   
+            <Navigation />         
          </div>
       );
    }

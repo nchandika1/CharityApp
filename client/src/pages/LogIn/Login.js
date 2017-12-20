@@ -30,10 +30,10 @@ class LogIn extends React.Component {
   // The render method returns the JSX that should be rendered
     render() {
       return (
-        <div>
-          <button className="Facebook-Login" onClick={this.handleFacebookLogin}>Facebook-Login</button>
+        <div className="button-box">
+          <button className="Facebook-Login style-button" onClick={this.handleFacebookLogin}>Facebook-Login</button>
 
-          <button className="Google-Login" onClick={this.handleGoogleLogin}>Google-Login</button>
+          <button className="Google-Login style-button" onClick={this.handleGoogleLogin}>Google-Login</button>
         </div>
       );             
   }

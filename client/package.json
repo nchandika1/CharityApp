@@ -6,11 +6,10 @@
   "dependencies": {
     "axios": "^0.16.2",
     "react": "^16.0.0",
+    "react-burger-menu": "^2.1.11",
     "react-dom": "^16.0.0",
     "react-router-dom": "^4.1.2",
-    "react-scripts": "1.0.14",
-    "react-burger-menu": "v2.1.11"
-
+    "react-scripts": "1.0.14"
   },
   "scripts": {
     "start": "react-scripts start",
