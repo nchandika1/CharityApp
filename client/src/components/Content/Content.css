@@ -13,3 +13,9 @@ html {
 h1 {
 	font-size: 60px;
 }
+
+.title {
+	color: #dfc954;
+	font-family: 'Roboto Condensed';
+	margin-left: 25px;
+}
