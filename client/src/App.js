@@ -7,7 +7,6 @@ import Users from "./pages/Users";
 const App = () =>
   <Router>
     <div>
-      <Navigation />
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/users/Donations" component={Users} />
