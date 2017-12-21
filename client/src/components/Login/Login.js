@@ -1,21 +1,29 @@
 import React from 'react';
 import { GoogleLogin } from 'react-google-login-component';
- 
-class Login extends React.Component{
- 
-  constructor (props, context) {
-    super(props, context);
-  }
- 
-  responseGoogle (googleUser) {
-    var id_token = googleUser.getAuthResponse().id_token;
-    console.log({accessToken: id_token});
+import API from '../../utils/API.js';
 
-    var profile = googleUser.getBasicProfile();
-    console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
-    console.log('Name: ' + profile.getName());
-    console.log('Image URL: ' + profile.getImageUrl());
-    console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+class Login extends React.Component{
+
+  getOrCreateUser = user => {
+    // Create User only if the entry doesn't already exist.
+    API.saveUser(user)
+       .then(res => {
+          console.log(`Created: ${JSON.stringify(res.data)}`);
+          this.props.onLoginChange(true, user.email);
+        });
+  } 
+ 
+  responseGoogle = googleUser => {
+    // let id_token = googleUser.getAuthResponse().id_token;
+    let profile = googleUser.getBasicProfile();
+    let userObj = {
+      email: profile.getEmail(),
+      firstName: profile.getGivenName(), 
+      lastName: profile.getFamilyName(), 
+      image: profile.getImageUrl()
+    };
+
+    this.getOrCreateUser(userObj);
   }
  
   render () {

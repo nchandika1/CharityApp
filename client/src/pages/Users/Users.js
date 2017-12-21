@@ -1,38 +1,34 @@
 import React, { Component } from "react";
-
 import API from "../../utils/API";
-// import { Link } from "react-router-dom";
+import Navigation from '../../components/Nav';
 
+// import "./Users.css";
 
 class Users extends Component {
   state = {
-    users: []
+    users: {}
   };
 
   componentDidMount() {
-    this.loadUsers();
+    this.loadUser();
   }
 
-  loadUsers = () => {
-    API.getUsers()
-      .then(res =>
-        this.setState({ users: res.data })
+  loadUser = () => {
+    API.getUser(this.props.user)
+      .then(res => {
+          this.setState({ users: res.data })
+          console.log("getUser: " + JSON.stringify(res.data));
+        }
       )
       .catch(err => console.log(err));
   };
 
   render() {
     return (
-      <div>    
-        <h1>Current Users</h1>
-        {this.state.users.length ? (
-          this.state.users.map(user => (
-            <p><strong>
-                {user.email} by {user.firstName}
-            </strong></p>
-          ))) 
-          : (<h3>No Results to Display</h3>)
-        }
+      <div> 
+        <Navigation />   
+        <h1>Current User</h1>
+        {this.state.users ? (<p>{this.state.users.email}</p>) : (<p>No User</p>)}
       </div>    
     );
   }

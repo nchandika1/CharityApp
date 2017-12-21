@@ -1,30 +1,35 @@
 import React from 'react';
-// import Header from '../../components/Header';
-import Navigation from '../../components/Nav';
-<<<<<<< HEAD
-// import Login from '../../components/Login';
-
-import Footer from '../../components/Footer';
-=======
->>>>>>> 2767326b4efce242ff71bc44204de7b858bb2296
-import Content from '../../components/Content';
 import Login from '../../components/Login';
+import Users from '../Users';
+import Content from '../../components/Content';
 
-// require("../assets/index.css")
 class Home extends React.Component {
-   render() {
-      return (
-         <div>
-            <Content buttface={true} />   
-            <Navigation /> 
-            <Footer /> 
 
-         </div>
+	constructor(props) {
+    	super(props);
+    	this.onLogInChange = this.onLogInChange.bind(this);
+	}
 
+	state = {
+		loggedIn: false,
+		email: ""
+	}
 
-      );
-   }
+	onLogInChange(userLogIn, userEmail) {
+		this.setState({loggedIn: userLogIn, email: userEmail});
+		console.log('Home: ' + this.state.loggedIn);
+		console.log('Home: ' + this.state.email);
+	}
+
+  render() {	
+    return (
+      <div>
+        <Content buttface={true} />
+      	{this.state.loggedIn ?  (<Users user={this.state.email} />) :    
+      	(<Login loggedIn={this.state.loggedIn} onLoginChange={this.onLogInChange}/>)}      	     
+    	</div>
+  	);
+ 	}
 }
-
 
 export default Home;
