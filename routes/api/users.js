@@ -14,18 +14,23 @@ router.get("/", function(req, res) {
       .catch(err => res.status(422).json(err));
 });
 
-// Matches with "/api/users" - CREATE A NEW USER
+// Matches with "/api/users" - CREATE A NEW USER if doesn't exist already
 router.post("/", function(req, res) {
-	console.log(`Create for body: {req.body}`);
+	console.log(`Create for body: ${JSON.stringify(req.body)}`);
 	db.User
-	  .create(req.body)
-	  .then(results => res.join(results))
+	  .findOrCreate({ where: {email: req.body.email}, 
+	  				  defaults: {firstName: req.body.firstName, lastName: req.body.lastName} })
+	  .spread((user, created) => {
+    		console.log(user.get({plain: true}));
+		    console.log(created);
+		    res.json(user);
+	  })
 	  .catch(err => res.status(422).json(err));
 });
 
 // Matches with /api/users/id - UPDATE
 router.put("/:id", function(req, res) {
-	console.log(`Update for id: {req.params.id} body: {req.body}`);
+	console.log(`Update for id: ${req.params.id} body: ${req.body}`);
 	db.User
 	  .update(req.body, { where: {id: req.params.id}})
 	  .then(results => res.join(results))
