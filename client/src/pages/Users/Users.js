@@ -6,7 +6,7 @@ import Navigation from '../../components/Nav';
 
 class Users extends Component {
   state = {
-    users: {}
+    user: {}
   };
 
   componentDidMount() {
@@ -16,7 +16,7 @@ class Users extends Component {
   loadUser = () => {
     API.getUser(this.props.user)
       .then(res => {
-          this.setState({ users: res.data })
+          this.setState({ user: res.data })
           console.log("getUser: " + JSON.stringify(res.data));
         }
       )
@@ -26,9 +26,10 @@ class Users extends Component {
   render() {
     return (
       <div> 
-        <Navigation />   
-        <h1>Current User</h1>
-        {this.state.users ? (<p>{this.state.users.email}</p>) : (<p>No User</p>)}
+        <Navigation />
+        {this.state.user ? (
+          <h2>Hello, {this.state.user.firstName} {this.state.user.lastName}</h2>
+        ) : (<p>No User</p>)}
       </div>    
     );
   }
