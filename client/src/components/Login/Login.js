@@ -4,14 +4,13 @@ import API from '../../utils/API.js';
 
 class Login extends React.Component{
 
-  state = {
-    user: {}
-  }
-
   getOrCreateUser = user => {
     // Create User only if the entry doesn't already exist.
     API.saveUser(user)
-       .then(res => console.log(`Created: ${JSON.stringify(res.data)}`));
+       .then(res => {
+          console.log(`Created: ${JSON.stringify(res.data)}`);
+          this.props.onLoginChange(true, user.email);
+        });
   } 
  
   responseGoogle = googleUser => {
@@ -24,7 +23,6 @@ class Login extends React.Component{
       image: profile.getImageUrl()
     };
 
-    console.log(userObj)
     this.getOrCreateUser(userObj);
   }
  

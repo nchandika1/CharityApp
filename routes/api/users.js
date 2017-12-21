@@ -14,6 +14,15 @@ router.get("/", function(req, res) {
       .catch(err => res.status(422).json(err));
 });
 
+//Matches with /api/users/:id - ID is the email
+router.get("/:id", function(req, res) {
+	console.log(`findOne: ${req.params.id}`);
+    db.User
+      .findOne({ where: {email: req.params.id} })
+      .then(results => res.json(results))
+      .catch(err => res.status(422).json(err));
+});
+
 // Matches with "/api/users" - CREATE A NEW USER if doesn't exist already
 router.post("/", function(req, res) {
 	console.log(`Create for body: ${JSON.stringify(req.body)}`);
