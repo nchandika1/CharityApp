@@ -2437,6 +2437,10 @@ execa@^0.8.0:
     signal-exit "^3.0.0"
     strip-eof "^1.0.0"
 
+exenv@^1.2.0:
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/exenv/-/exenv-1.2.2.tgz#2ae78e85d9894158670b03d47bec1f03bd91bb9d"
+
 expand-brackets@^0.1.4:
   version "0.1.5"
   resolved "https://registry.yarnpkg.com/expand-brackets/-/expand-brackets-0.1.5.tgz#df07284e342a807cd733ac5af72411e581d1177b"
@@ -5080,7 +5084,7 @@ promise@^7.1.1:
   dependencies:
     asap "~2.0.3"
 
-prop-types@^15.5.4, prop-types@^15.5.8, prop-types@^15.6.0:
+prop-types@^15.5.10, prop-types@^15.5.4, prop-types@^15.5.8, prop-types@^15.6.0:
   version "15.6.0"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.6.0.tgz#ceaf083022fc46b4a35f69e13ef75aed0d639856"
   dependencies:
@@ -5247,6 +5251,14 @@ react-error-overlay@^3.0.0:
 react-google-login-component@^0.9.2:
   version "0.9.2"
   resolved "https://registry.yarnpkg.com/react-google-login-component/-/react-google-login-component-0.9.2.tgz#c4edf72c0dad55b4f11215e358a5e31b42e55acd"
+
+react-modal@^3.1.10:
+  version "3.1.10"
+  resolved "https://registry.yarnpkg.com/react-modal/-/react-modal-3.1.10.tgz#8898b5cc4ebba78adbb8dea4c55a69818aa682cc"
+  dependencies:
+    exenv "^1.2.0"
+    prop-types "^15.5.10"
+    warning "^3.0.0"
 
 react-router-dom@^4.1.2:
   version "4.2.2"

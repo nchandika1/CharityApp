@@ -1,17 +1,23 @@
+//The main component that goes into index.html
+
+// Dependencies
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "./pages/Home";
-import Navigation from './components/Nav';
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 import Users from "./pages/Users";
 
+// Main component rendered in the index.html
 const App = () =>
   <Router>
     <div>
-      <Switch>
-        <Route exact path="/" component={Home} />
-        <Route exact path="/users/Donations" component={Users} />
-      </Switch>
-
+      <Header />
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/users/Donations" component={Users} />
+        </Switch>
+   	  <Footer />
     </div>
   </Router>;
 
