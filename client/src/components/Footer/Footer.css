@@ -1,0 +1,13 @@
+.footer-bottom {
+	position: absolute;
+	width: 100%;
+	align-content: center;
+	background: #000;
+	top: 95%;
+	margin: 20px 0 0;
+	font-family: 'Roboto Condensed', sans-serif;
+	color: #fff;
+	font-size: 10px;
+	text-align: center;
+}
+
