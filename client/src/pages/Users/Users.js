@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
 import Navigation from '../../components/Nav';
-
 // import "./Users.css";
 
 class Users extends Component {
@@ -25,8 +24,8 @@ class Users extends Component {
 
   render() {
     return (
-      <div> 
-        <Navigation />
+      <div>
+        <Navigation user={this.state.user.id} />
         {this.state.user ? (
           <h2>Hello, {this.state.user.firstName} {this.state.user.lastName}</h2>
         ) : (<p>No User</p>)}
