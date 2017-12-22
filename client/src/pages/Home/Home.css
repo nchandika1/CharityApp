@@ -2,8 +2,16 @@
 /* * CSS file for styling main content
  */
 
-html {
+.large {
 	background-image: url('../../assets/images/girls_homeimage.jpg');
+/*	width: 100%;
+	height: 720px;*/
+}
+
+.large2 {
+	background-image: url('../../assets/images/c6duwascoea-joshua-earle.jpg');
+/*	width: 100%;
+	height: 720px;*/
 }
 
 .image-container {
