@@ -23,5 +23,12 @@ export default {
   },
   getDonations: function(id) {
     return axios.get("/api/donation/" + id);
+  },
+  saveDonation: function(donateData) {
+    console.log("API: " + JSON.stringify(donateData));
+    return axios.post("/api/donation", donateData);
+  },
+  getDonationsByUser: function(userId) {
+    return axios.get("/api/donation/user/" + userId);
   }
 };

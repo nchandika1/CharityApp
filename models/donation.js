@@ -13,12 +13,15 @@ module.exports = function(sequelize, DataTypes) {
     url: {
       type: DataTypes.STRING
     },
+    fundUrl: {
+      type: DataTypes.STRING
+    },
     donatedAmount: {
       type: DataTypes.STRING
     },
     donatedDate: {
       type: DataTypes.DATE
-    },
+    },    
     favorite: {
       type: DataTypes.BOOLEAN
     }
