@@ -1,6 +1,7 @@
 // Dependencies
 import React, {Component} from "react";
 import API from "../../utils/API";
+import Navigation from '../../components/Nav';
 
 class Donations extends Component {
   state = {

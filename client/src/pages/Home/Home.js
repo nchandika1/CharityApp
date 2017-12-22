@@ -1,7 +1,8 @@
 import React from 'react';
 import Login from '../../components/Login';
 import Users from '../Users';
-import Content from '../../components/Content';
+import "./Home.css";
+
 
 class Home extends React.Component {
 
@@ -22,11 +23,10 @@ class Home extends React.Component {
 
   render() {	
     return (
-      <div>
-        <Content buttface={true} />
+      <div className="container-fluid">
       	{this.state.loggedIn ?  (<Users user={this.state.email} />) :    
       	(<Login loggedIn={this.state.loggedIn} onLoginChange={this.onLogInChange}/>)}      	     
-    	</div>
+     </div>
   	);
  	}
 }

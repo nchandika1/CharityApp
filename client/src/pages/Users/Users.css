@@ -1,0 +1,31 @@
+html {
+	background-color: #000;
+}
+
+
+/*h2 {
+	color: #dfc954;
+	font-family: 'Roboto Condensed';
+	margin-left: 40px;
+	font-size: 28px;
+}*/
+
+.container-fluid {
+	margin-right: 40px;
+	font-family: 'Roboto Condensed';
+}
+
+
+.NameGreeting 
+	font-family: 'Roboto Condensed', sans-serif;
+	font-size: 36px;
+	font-color: #dfc954;
+	margin-left: 40px;
+
+}
+
+.row {
+	margin-left: 40px;
+	line-height: 100px;
+
+}
