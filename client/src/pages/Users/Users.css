@@ -1,7 +1,10 @@
-html {
-	background-color: #000;
-}
 
+
+.large2 {
+	background-image: url('../../assets/images/abigail-keenan-27292.jpg');
+	width: 100%;
+	height: 720px;
+}
 
 /*h2 {
 	color: #dfc954;

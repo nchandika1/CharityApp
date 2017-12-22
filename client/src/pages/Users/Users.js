@@ -12,6 +12,9 @@ class Users extends Component {
 
   componentDidMount() {
     this.loadUser();
+    let elem = document.querySelector('body');
+    elem.classList.remove('large');
+    elem.classList.add('large2');
   }
 
   loadUser = () => {

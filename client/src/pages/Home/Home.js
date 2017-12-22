@@ -17,6 +17,13 @@ class Home extends React.Component {
 		id: 0
 	}
 
+	componentDidMount(){
+		let elem = document.querySelector('body');
+		elem.classList.add('large');
+	}
+
+
+
 	onLogInChange(userLogIn, userEmail, userId) {
 		this.setState({loggedIn: userLogIn, email: userEmail, id: userId});
 	}
