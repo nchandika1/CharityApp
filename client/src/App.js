@@ -11,6 +11,7 @@ import Users from "./pages/Users";
 // Main component rendered in the index.html
 const App = () =>
   <Router>
+  <div className="container-fluid">
     <div>
       <Header />
         <Switch>
@@ -19,6 +20,7 @@ const App = () =>
         </Switch>
    	  <Footer />
     </div>
+  </div>
   </Router>;
 
 export default App;

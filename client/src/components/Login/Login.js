@@ -1,4 +1,5 @@
 import React from 'react';
+import "./Login.css";
 import { GoogleLogin } from 'react-google-login-component';
 import API from '../../utils/API.js';
 
@@ -28,17 +29,20 @@ class Login extends React.Component{
  
   render () {
     return (
-      <div>
-        <GoogleLogin socialId="30112038592-893k01ohoonmndj1snfrndf50dp05sf5.apps.googleusercontent.com"
-                     className="google-login"
-                     scope="profile"
-                     fetchBasicProfile={true}
-                     responseHandler={this.responseGoogle}
-                     buttonText="Login With Google"/>
+      <div className="container-fluid">
+        <div id="Modal">
+	        <div>
+	          <GoogleLogin socialId="30112038592-893k01ohoonmndj1snfrndf50dp05sf5.apps.googleusercontent.com"
+	                       className="Google-Login"
+	                       scope="profile"
+	                       fetchBasicProfile={true}
+	                       responseHandler={this.responseGoogle}
+	                       buttonText="Continue With Google" />
+	        </div>
+        </div>
       </div>
     );
   }
- 
 }
  
 export default Login;

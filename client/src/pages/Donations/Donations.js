@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import API from "../../utils/API";
+import Navigation from '../../components/Nav';
 
 class Donations extends Component {
   state = {
@@ -29,6 +30,7 @@ class Donations extends Component {
   render() {
     return (
       <div>
+      <Navigation /> 
         <h1> Donors search list goes here </h1>
       </div>
     );

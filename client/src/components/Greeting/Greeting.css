@@ -1,0 +1,19 @@
+.greeting {
+	position: absolute;
+	width: 100%;
+	align-content: center;
+	background: #000;
+	top: 95%;
+	margin: 20px 0 0;
+	font-size: 10px;
+	text-align: center;
+}
+
+.container {
+	margin-left: 40px;
+	margin-right: 40px;
+	background: #000;
+}
+
+
+

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
 import Navigation from '../../components/Nav';
+import Greeting from '../../components/Greeting'; 
 
 // import "./Users.css";
 
@@ -26,10 +27,21 @@ class Users extends Component {
   render() {
     return (
       <div> 
-        <Navigation />   
-        <h1>Current User</h1>
-        {this.state.users ? (<p>{this.state.users.email}</p>) : (<p>No User</p>)}
-      </div>    
+        <Navigation />  
+        <Greeting /> 
+        <div id="container-fluid">
+          <div className="row">
+            <div className="NameGreeting"><h2>Current User</h2></div>
+            {this.state.users ? (<p>{this.state.users.email}</p>) : (<p>No User</p>)}
+              <div className="row">
+              <h3>NEWS FEEDS HERE</h3>
+            </div>
+            <div className="row">
+              <h3>CHARTS HERE</h3>
+            </div>
+          </div>  
+        </div>
+      </div>  
     );
   }
 }
