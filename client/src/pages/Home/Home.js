@@ -13,13 +13,12 @@ class Home extends React.Component {
 
 	state = {
 		loggedIn: false,
-		email: ""
+		email: "",
+		id: 0
 	}
 
-	onLogInChange(userLogIn, userEmail) {
-		this.setState({loggedIn: userLogIn, email: userEmail});
-		console.log('Home: ' + this.state.loggedIn);
-		console.log('Home: ' + this.state.email);
+	onLogInChange(userLogIn, userEmail, userId) {
+		this.setState({loggedIn: userLogIn, email: userEmail, id: userId});
 	}
 
   render() {	

@@ -7,7 +7,7 @@ import Greeting from '../../components/Greeting';
 
 class Users extends Component {
   state = {
-    users: {}
+    user: {}
   };
 
   componentDidMount() {
@@ -17,7 +17,7 @@ class Users extends Component {
   loadUser = () => {
     API.getUser(this.props.user)
       .then(res => {
-          this.setState({ users: res.data })
+          this.setState({ user: res.data })
           console.log("getUser: " + JSON.stringify(res.data));
         }
       )
@@ -27,11 +27,10 @@ class Users extends Component {
   render() {
     return (
       <div> 
-        <Navigation />  
+        <Navigation user={this.state.user.id} /> 
         <Greeting /> 
         <div id="container-fluid">
           <div className="row">
-            <div className="NameGreeting"><h2>Current User</h2></div>
             {this.state.users ? (<p>{this.state.users.email}</p>) : (<p>No User</p>)}
               <div className="row">
               <h3>NEWS FEEDS HERE</h3>
