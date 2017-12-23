@@ -50,13 +50,12 @@ router.post("/", function(req, res) {
 	  })
 });
 
-// Matches with /api/donation/id - UPDATE
-router.put("/:id", function(req, res) {
-	console.log(`Update for id: {req.params.id} body: {req.body}`);
+// Matches with /api/donation/user/id - UPDATE
+router.put("/:user/:id", function(req, res) {
+	console.log(req.body);
 	db.Donation
-	  .update(req.body, { where: {id: req.params.id}})
-	  .then(results => res.join(results))
-	  .catch(err => res.status(422).json(err));
+	  .update(req.body, { where: {id: req.params.id, UserId: req.params.user}})
+	  .then(results => res.json(results))
 });
 
 // Matches with /api/donation/id - Delete
@@ -64,8 +63,7 @@ router.delete("/:id", function(req, res) {
 	console.log(`Update for id: {req.params.id} body: {req.body}`);
 	db.Donation
 	  .destroy({ where: {id: req.params.id} })
-	  .then(results => res.join(results))
-	  .catch(err => res.status(422).json(err));
+	  .then(results => res.json(results))
 });
 
 

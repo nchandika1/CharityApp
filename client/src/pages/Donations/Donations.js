@@ -79,6 +79,28 @@ class Donations extends Component {
       })
   }
 
+  parseForDonationAmount = url => {
+    let amount = 0;
+    if (url.includes("donationAmount")) {
+      url.split("&").map( item => {
+          if (item.includes("donationAmount")) {
+            amount = parseInt(item.split("=")[1]);
+          }
+      })
+    }
+    return amount;
+  }
+
+  handleDonate = donation => {
+    console.log("handleDonate");
+    const donationAmount = this.parseForDonationAmount(donation.fundUrl);
+    const data = {
+      donatedAmount : parseInt(donation.donatedAmount) + donationAmount
+    }
+    console.log(data.donatedAmount)
+    API.updateDonationById(this.props.match.params.userid, donation.id, data);
+  }
+
   render() {
     let userid = this.props.match.params.userid;
     console.log(`Donations ${userid}`);
@@ -89,8 +111,10 @@ class Donations extends Component {
           <div key={i}>
             <li>
               <a href={donation.url} target="_blank">{donation.orgName}</a>
+              <p>Request: ${this.parseForDonationAmount(donation.fundUrl)}</p>
               <br />  
-              <a href={donation.fundUrl} target="_blank">Donate</a>
+              <a href={donation.fundUrl} target="_blank" >Fund Page</a>
+              <button onClick={() => this.handleDonate(donation)}>Donate</button>
             </li>
           </div>
         )}

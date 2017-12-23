@@ -30,5 +30,8 @@ export default {
   },
   getDonationsByUser: function(userId) {
     return axios.get("/api/donation/user/" + userId);
+  },
+  updateDonationById: function(userId, id, updateData) {
+    return axios.put("/api/donation/" + userId + "/" + id, updateData);
   }
 };
