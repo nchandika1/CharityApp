@@ -1,7 +1,8 @@
 // Dependencies
 import React, {Component} from "react";
 import API from "../../utils/API";
-// import Navigation from '../../components/Nav';
+import Navigation from '../../components/Nav';
+import "./Donations.css";
 
 class Donations extends Component {
   state = {
@@ -106,35 +107,43 @@ class Donations extends Component {
     console.log(`Donations ${userid}`);
     return (
       <div>
-        <h3> My Donations </h3>
+        <Navigation user={userid} /> 
+        <br />
+        <div className="headline"> My Donations </div>
+        <br />
         {this.state.myDonations.map((donation, i) =>
-          <div key={i}>
-            <li>
-              <a href={donation.url} target="_blank">{donation.orgName}</a>
-              <p>Request: ${this.parseForDonationAmount(donation.fundUrl)}</p>
-              <br />  
-              <a href={donation.fundUrl} target="_blank" >Fund Page</a>
-              <button onClick={() => this.handleDonate(donation)}>Donate</button>
-            </li>
+          <div key={i} className="donation-item">
+            <a className="donation-title" href={donation.url} target="_blank">{donation.orgName}</a>
+            <div className="donation-subtitle">
+              <span>Request: ${this.parseForDonationAmount(donation.fundUrl)}</span> | 
+              <span>Total Donated: ${donation.donatedAmount}</span> | 
+              <a href={donation.fundUrl} target="_blank" > Fund Page</a> | 
+              <a href="#" onClick={() => this.handleDonate(donation)}> Donate</a> | 
+              <a href="#">Archive</a>
+            </div>
           </div>
         )}
-        <hr />
-        <h3>Search Donations</h3>
-        <input type="text" placeholder="Zip Code" name="searchStr" onChange={this.handleInputChange} value={this.state.searchStr}/>
-        <button onClick={this.handleSearchDonations}>Search</button>
-        { this.state.donations ?
-        (<ul>
-          {this.state.donations.map(donation => 
-            <div key={donation.orgId}>
-            <li>
+        <br />
+        <div className="headline"> My Search </div>
+        <div className="search-button">
+          <input type="text" placeholder="Zip Code" name="searchStr" onChange={this.handleInputChange} value={this.state.searchStr}/>
+          <button onClick={this.handleSearchDonations}>Search</button>
+        </div>
+        <div>
+        { this.state.donations.length ?
+          (this.state.donations.map(donation => 
+            <div key={donation.orgId} className="search-item">
               <a href={donation.url} target="_blank">{donation.orgName}</a>
-              <button onClick={() => this.handleFavorite(donation)}>Favorite</button>
-              <p>{donation.fulfillmentTrailer}</p>
-            </li>
+              <button className="favorite-icon" onClick={() => this.handleFavorite(donation)}>
+                &#9829;
+              </button>
+              <div className="search-subtitle">
+                <p>{donation.fulfillmentTrailer}</p>
+              </div>
             </div>
-          )}
-        </ul>) : ( <h4>No Donations</h4>) }
-        
+          ))
+          : ( <div className="no-search">Type in ZipCode to display Donations by Loation</div>) }
+        </div>
       </div>
     );
   }
