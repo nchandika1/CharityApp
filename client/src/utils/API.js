@@ -19,7 +19,7 @@ export default {
   },
   // Get Donations from the database
   searchDonationsByLocation: function(locationData) {
-    return axios.get("/api/search/donations", locationData);
+    return axios.post("/api/search/donations", locationData);
   },
   getDonations: function(id) {
     return axios.get("/api/donation/" + id);

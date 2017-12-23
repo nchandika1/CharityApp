@@ -12,14 +12,11 @@ const DONATE_url = "https://api.donorschoose.org/common/json_feed.html?APIKey=DO
 const VOLUNTEER_url = "https://www.volunteermatch.org/search/?";
 
 // Route: /api/search/donations
-router.get("/donations", function(req, res){
-	const str = util.inspect(req.params, { showHidden: true, depth: null });
+router.post("/donations", function(req, res){
+	console.log(req.body.zip);
+	// let url = `${DONATE_url}&state=CA&cityName=Menlo Park&includeNearbyLocations=false`;
+	let url = `${DONATE_url}&zip=${req.body.zip}&includeNearbyLocations=false`;
 
-	console.log(`Request: ${str}`);
-	console.log(`Search Donotions: ${req.body.city}`);
-	// &centerZip=94025
-	// let url = `${DONATE_url}&state=${req.body.city}&cityName=${req.body.state}&includeNearbyLocations=true`;
-	let url = `${DONATE_url}&state=CA&cityName=Menlo Park&includeNearbyLocations=false`;
 	console.log(url);
 	request(url, function(err, results, body) {
 		res.json(results);
@@ -27,7 +24,7 @@ router.get("/donations", function(req, res){
 });
 
 // Route: /api/search/volunteer
-router.get("/volunteer", function(req, res) {
+router.post("/volunteer", function(req, res) {
 	console.log(`Search Donotions: {req.body}`);
 	// Scrape this site.  We don't have an API to get the list of voluntter sites
 	let url = `{VOLUNTEER_url}l={req.body.location}`

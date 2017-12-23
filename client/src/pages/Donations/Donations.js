@@ -1,19 +1,25 @@
 // Dependencies
 import React, {Component} from "react";
 import API from "../../utils/API";
-import Navigation from '../../components/Nav';
+// import Navigation from '../../components/Nav';
 
 class Donations extends Component {
   state = {
     donations: [],
-    myDonations: []
+    myDonations: [],
+    searchStr: ""
   }
 
   componentDidMount = () => {
     this.populateMyDonations(this.props.match.params.userid);
   }
 
-  populateSearchDonations(proposals) {
+  handleInputChange = event => {
+    console.log(event.target.value);
+    this.setState({searchStr: event.target.value})
+  }
+
+  populateSearchDonations = proposals => {
     let objArray = proposals.map(org => {
       return ({
         orgName: org.title,
@@ -30,19 +36,28 @@ class Donations extends Component {
     this.setState({donations: objArray});
   }
 
-  handleSearchDonations = (event, location) => {
-    const locationData = {
-      city: "Menlo Park",
-      state: "CA"
-    };
+  handleSearchDonations = (event) => {
+    // Prevent page reload
     event.preventDefault();
-    API.searchDonationsByLocation(locationData)
-       .then(res => {
-        const data = JSON.parse(res.data.body);
-        console.log(data.proposals);
-        this.populateSearchDonations(data.proposals);
-       })
-       .catch(err => console.log(err));
+
+    // Search by Zip for now
+    const locationData = {
+      zip: this.state.searchStr
+    }
+
+    if (locationData.zip) {
+      // Empty the last search results saved in donations
+      this.setState({donations: []});
+
+      // Start a new search for a given Zip Code
+      API.searchDonationsByLocation(locationData)
+         .then(res => {
+          const data = JSON.parse(res.data.body);
+          console.log(data.proposals);
+          this.populateSearchDonations(data.proposals);
+         })
+         .catch(err => console.log(err));
+     }
   }
 
   handleFavorite = (org) => {
@@ -73,12 +88,16 @@ class Donations extends Component {
         {this.state.myDonations.map((donation, i) =>
           <div key={i}>
             <li>
-              <a href={donation.url} target="_blank">{donation.orgName}</a>  
-              <a href="#">Donate</a>
+              <a href={donation.url} target="_blank">{donation.orgName}</a>
+              <br />  
+              <a href={donation.fundUrl} target="_blank">Donate</a>
             </li>
           </div>
         )}
+        <hr />
         <h3>Search Donations</h3>
+        <input type="text" placeholder="Zip Code" name="searchStr" onChange={this.handleInputChange} value={this.state.searchStr}/>
+        <button onClick={this.handleSearchDonations}>Search</button>
         { this.state.donations ?
         (<ul>
           {this.state.donations.map(donation => 
@@ -91,7 +110,7 @@ class Donations extends Component {
             </div>
           )}
         </ul>) : ( <h4>No Donations</h4>) }
-        <button onClick={this.handleSearchDonations}>Search</button>
+        
       </div>
     );
   }
