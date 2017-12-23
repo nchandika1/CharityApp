@@ -33,5 +33,8 @@ export default {
   },
   updateDonationById: function(userId, id, updateData) {
     return axios.put("/api/donation/" + userId + "/" + id, updateData);
+  },
+  deleteDonationById: function(id) {
+    return axios.delete("/api/donation/" + id);
   }
 };
