@@ -15,7 +15,7 @@ class Users extends Component {
     this.loadUserData();    
     let elem = document.querySelector('body');
     elem.classList.remove('large');
-    // elem.classList.add('large2');
+    elem.classList.add('large2');
   }
 
   getAnnualContributions(user) {
@@ -46,13 +46,12 @@ class Users extends Component {
   render() {
     return (
       <div> 
+        <Greeting name={`${this.state.user.firstName} ${this.state.user.lastName}`}/> 
         <Navigation user={this.state.user.id} /> 
-        <Greeting /> 
         <div id="container-fluid">
           <div className="row">
             {this.state.user ? (
               <div>
-                <p>{this.state.user.email}</p>
                 <div className="row chart-style">
                 {this.state.contrib.length ?
                   (<Chart contrib={this.state.contrib}/>)

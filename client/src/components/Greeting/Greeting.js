@@ -1,16 +1,17 @@
+// Dependencies
 import React from 'react';
 import "./Greeting.css";
 
+// Render User Greeting for the Home page
 class Greeting extends React.Component {
-   render() {
-      	return (
-        	<div className="container">
-					  <div className="row">
-							<div className="col"><h2>2018 DONATION GOALS</h2></div>
-						</div>
-					</div>
-      	);
-   	}
+  render() {
+  	return (
+    	<div className="container">
+				<span className="greeting">Welcome {this.props.name}!</span>
+				<span className="greeting-right">Summary of your donations.</span>
+			</div>
+  	);
+   }
 }
 
 export default Greeting;

@@ -1,19 +1,25 @@
-.greeting {
-	position: absolute;
-	width: 100%;
-	align-content: center;
-	background: #000;
-	top: 95%;
-	margin: 20px 0 0;
-	font-size: 10px;
-	text-align: center;
-}
-
 .container {
 	margin-left: 40px;
 	margin-right: 40px;
-	background: #000;
+	background-color: gray;
+	height: 50px;
 }
 
+.greeting {
+	color: black;
+	line-height: 50px;
+	font-size: 20px;
+	padding: 0 30px;
+	font-family: 'Roboto Condensed';
+}
+
+.greeting-right {
+	color: darkgray;
+	line-height: 50px;
+	font-size: 15px;
+	padding: 0 30px;
+	font-family: 'Roboto Condensed';
+	float: right;
+}
 
 
