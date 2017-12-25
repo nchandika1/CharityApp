@@ -5,7 +5,14 @@ body {
     position:relative; 
     padding-bottom:40px;
 }
+
+p {
+    text-align: center;
+}
+
 .footer-bottom { 
+    background-color: #000;
+    align-content: center;
     position: absolute; 
     left: 0 ; right: 0; bottom: 0; 
     bottom: 0;
@@ -13,8 +20,6 @@ body {
     height: 40px;
     font-family: 'Roboto Condensed', sans-serif;
     color: #fff;
-    align-content: center;
-
     
 
 }

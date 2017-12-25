@@ -1,16 +1,16 @@
-.greeting {
+/*.greeting {
 	position: absolute;
 	width: 600px;
 	height: 60px;
 	align-content: left;
 	background: #fff;
 	opacity: 0.5;  /* 50% transparent */ 
-	top: 70px;
-	/*margin: 0px 0 0;*/
-	font-size: 30px;
+/*	top: 70px;
+*/	/*margin: 0px 0 0;*/
+/*	font-size: 30px;
 	text-align: left;
 	text-align: absolute;
-}
+}*/
 
 /*.container {
 	margin-left: 0px;
