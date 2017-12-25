@@ -5,10 +5,10 @@ class Greeting extends React.Component {
    render() {
       	return (
         	<div className="container">
-					  <div className="row">
-							<div className="col"><h2>2018 DONATION GOALS</h2></div>
-						</div>
-					</div>
+				<div className="row greeting"> 
+					<h3>2018 DONATION GOALS</h3>
+				</div>
+			</div>
       	);
    	}
 }

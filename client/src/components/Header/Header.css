@@ -5,3 +5,9 @@
 	
 
 }
+
+.container-fluid {
+	background-color: transparent;
+	max-height: 100px;
+	margin-left: 40px;
+}

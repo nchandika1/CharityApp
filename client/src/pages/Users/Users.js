@@ -27,12 +27,12 @@ class Users extends Component {
       .catch(err => console.log(err));
   };
 
-  render() {
+    render() {
     return (
       <div> 
         <Navigation user={this.state.user.id} /> 
         <Greeting /> 
-        <div id="container-fluid">
+        <div id="container">
           <div className="row">
             {this.state.users ? (<p>{this.state.users.email}</p>) : (<p>No User</p>)}
               <div className="row">

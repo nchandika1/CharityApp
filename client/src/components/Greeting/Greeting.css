@@ -1,19 +1,22 @@
 .greeting {
 	position: absolute;
-	width: 100%;
-	align-content: center;
-	background: #000;
-	top: 95%;
-	margin: 20px 0 0;
-	font-size: 10px;
-	text-align: center;
+	width: 600px;
+	height: 60px;
+	align-content: left;
+	background: #fff;
+	opacity: 0.5;  /* 50% transparent */ 
+	top: 70px;
+	/*margin: 0px 0 0;*/
+	font-size: 30px;
+	text-align: left;
+	text-align: absolute;
 }
 
-.container {
-	margin-left: 40px;
+/*.container {
+	margin-left: 0px;
 	margin-right: 40px;
 	background: #000;
 }
-
+*/
 
 

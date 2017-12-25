@@ -68,7 +68,7 @@ class Donations extends Component {
     let userid = this.props.match.params.userid;
     console.log(`Donations ${userid}`);
     return (
-      <div>
+      <div className="container">
         <h3> My Donations </h3>
         {this.state.myDonations.map((donation, i) =>
           <div key={i}>
