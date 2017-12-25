@@ -73,6 +73,22 @@ class Donations extends Component {
     API.updateDonationById(this.props.match.params.userid, donation.id, data)
     .then(res => {
          this.populateMyDonations(this.props.match.params.userid)
+         let year = (new Date()).getFullYear();
+         API.getAnnualByYear(year)
+          .then(res => {
+            if (res.data) {
+              console.log("Entry exists!");
+              // Add the current contribution to this year!
+              API.updateAnnual(res.data.id, {total: res.data.total+donationAmount})
+                .then(results => console.log(results))
+            } else  {
+              console.log("Create a new entry!");
+              API.saveAnnual({year: year, total: donationAmount, UserId: this.props.match.params.userid })
+                 .then(results => {
+                    console.log(results.data);
+                 })
+            }
+          });
     });
   }
 

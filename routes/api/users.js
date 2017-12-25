@@ -32,6 +32,14 @@ router.post("/", function(req, res) {
 	  .spread((user, created) => {
     		console.log(user.get({plain: true}));
 		    console.log(created);
+		    db.Annual
+          .bulkCreate([
+            {year: "2017", total: 100, UserId: user.id},
+            {year: "2016", total: 50, UserId: user.id},
+            {year: "2015", total: 300, UserId: user.id},
+            {year: "2014", total: 1000, UserId: user.id},
+            {year: "2013", total: 200, UserId: user.id}
+         ]);
 		    res.json(user);
 	  })
 	  .catch(err => res.status(422).json(err));

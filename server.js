@@ -34,9 +34,7 @@ db.sequelize.sync({force: true}).then(function(){
 			city: "Happy", 
 			state: "CA", 
 			zipCode: "99999"
-		})
-	.then(results => console.log(results));
-
+		});
 	//===============================
 
 	// Start the API server

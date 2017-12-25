@@ -36,5 +36,17 @@ export default {
   },
   deleteDonationById: function(id) {
     return axios.delete("/api/donation/" + id);
+  },
+  getAnnualByYear: function(year) {
+    return axios.get("/api/annual/year" + year);
+  },
+  getAnnualsByUser: function(user) {
+    return axios.get("/api/annual/user/" + user);
+  },
+  saveAnnual: function(data) {
+    return axios.post("/api/annual",data)
+  },
+  updateAnnual: function(id, data) {
+    return axios.put("/api/annual/" + id, data);
   }
 };
