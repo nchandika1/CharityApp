@@ -1,13 +1,15 @@
-.footer-bottom {
+.footer {
 	position: absolute;
 	width: 100%;
-	align-content: center;
-	background: #000;
-	top: 95%;
-	margin: 20px 0 0;
+	height: 60px;
+	background: gray;
 	font-family: 'Roboto Condensed', sans-serif;
-	color: #fff;
-	font-size: 10px;
+	font-weight: lighter;
+	color: darkgray;
 	text-align: center;
+	font-size: 15px;
+	text-align: center;
+	line-height: 40px;
+	bottom:0;
 }
 
