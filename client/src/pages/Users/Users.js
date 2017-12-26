@@ -11,6 +11,8 @@ class Users extends Component {
     contrib: [] // Represents annual $$ contributions for this user
   };
 
+  // Actions when the component mounts
+  // In this case, get the user information from the database and render the information
   componentDidMount() {
     this.loadUserData();    
     let elem = document.querySelector('body');
@@ -18,6 +20,8 @@ class Users extends Component {
     elem.classList.add('large2');
   }
 
+  // Function to get the annual contribution information for the user
+  // This is used to load charts on this page
   getAnnualContributions(user) {
     console.log(user.id);
     API.getAnnualsByUser(user.id)
@@ -29,12 +33,10 @@ class Users extends Component {
         // Sort by year
         annualData = annualData.sort( (a, b) => (a.year - b.year) );
         this.setState({user: user, contrib: annualData});
-        
-        console.log("State User");
-        console.log(this.state);
       });
   }
 
+  // Function to get user information
   loadUserData() {
     API.getUser(this.props.user)
       .then(res => {

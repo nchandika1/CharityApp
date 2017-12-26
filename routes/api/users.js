@@ -14,11 +14,11 @@ router.get("/", function(req, res) {
       .catch(err => res.status(422).json(err));
 });
 
-//Matches with /api/users/:id - ID is the email
+//Matches with /api/users/:id - ID is the id
 router.get("/:id", function(req, res) {
 	console.log(`findOne: ${req.params.id}`);
     db.User
-      .findOne({ where: {email: req.params.id} })
+      .findOne({ where: {id: req.params.id} })
       .then(results => res.json(results))
       .catch(err => res.status(422).json(err));
 });

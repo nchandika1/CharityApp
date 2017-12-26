@@ -10,7 +10,7 @@ class Login extends React.Component{
     API.saveUser(user)
        .then(res => {
           console.log(`Created: ${JSON.stringify(res.data)}`);
-          this.props.onLoginChange(true, res.data.email, res.data.id);
+          this.props.onLoginChange(true, res.data.id);
         });
   } 
  

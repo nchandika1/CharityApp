@@ -9,20 +9,38 @@ import Profile from "./pages/Profile";
 import Volunteer from "./pages/Volunteer";
 
 // Main component rendered in the index.html
-const App = () =>
-  <Router>
-  <div className="container-fluid">
-    <div>
-      <Header />
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/profile/:userid" component={Profile} />
-          <Route exact path="/donate/:userid" component={Donations} />
-          <Route exact path="/volunteer/:userid" component={Volunteer} />
-        </Switch>
-   	  <Footer />
-    </div>
-  </div>
-  </Router>;
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.onUserLogIn = this.onUserLogIn.bind(this);
+    this.state = {
+      loggedIn: false,
+      id: 0
+    };
+  }
+
+  onUserLogIn(loggedIn, id) {
+    this.setState({loggedIn: loggedIn, id: id});
+  }
+
+  render() {
+    return(
+      <Router>
+      <div className="container-fluid">
+        <div>
+          <Header />
+            <Switch>
+              <Route exact path="/" render={()=><Home onUserLogIn={this.onUserLogIn} user={this.state.id}/>} />
+              <Route exact path="/profile/:userid" component={Profile} />
+              <Route exact path="/donate/:userid" component={Donations} />
+              <Route exact path="/volunteer/:userid" component={Volunteer} />
+            </Switch>
+       	  <Footer />
+        </div>
+      </div>
+      </Router>
+    );
+  }
+}
 
 export default App;

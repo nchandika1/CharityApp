@@ -1,5 +1,6 @@
 // Dependencies
 import React from 'react';
+import { Link } from 'react-router-dom'
 import { slide as Menu } from 'react-burger-menu'
 import "./Nav.css";
 
@@ -10,11 +11,11 @@ class Navigation extends React.Component {
 	render () {
     return (
       <Menu right >
-          <a id="home" className="menu-item name" href="/">HOME</a>
-          <a id="profile" className="menu-item name" href={"/profile/"+this.props.user}>MY PROFILE</a>
-          <a id="donate" className="menu-item name" href={"/donate/"+this.props.user}>DONATE</a>
-          <a id="volunteer" className="menu-item name" href={"/volunteer/"+this.props.user}>VOLUNTEER</a>
-          <a id="signout" className="menu-item name" href="/">SIGNOUT</a>
+          <Link to='/'>HOME</Link>
+          <Link to={"/profile/"+this.props.user}>MY PROFILE</Link>
+          <Link to={"/donate/"+this.props.user}>DONATE</Link>
+          <Link to={"/volunteer/"+this.props.user}>VOLUNTEER</Link>
+          <Link to={"/"}>SIGNOUT</Link>
       </Menu>
     );
   }
