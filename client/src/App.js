@@ -7,6 +7,7 @@ import Footer from "./components/Footer";
 import Donations from "./pages/Donations";
 import Profile from "./pages/Profile";
 import Volunteer from "./pages/Volunteer";
+import Signout from "./pages/Signout";
 
 // Main component rendered in the index.html
 class App extends React.Component {
@@ -34,6 +35,7 @@ class App extends React.Component {
               <Route exact path="/profile/:userid" component={Profile} />
               <Route exact path="/donate/:userid" component={Donations} />
               <Route exact path="/volunteer/:userid" component={Volunteer} />
+              <Route exact path="/signout/:userid" component={Signout} />
             </Switch>
        	  <Footer />
         </div>

@@ -11,11 +11,11 @@ class Navigation extends React.Component {
 	render () {
     return (
       <Menu right >
-          <Link to='/'>HOME</Link>
+          <Link to="/">HOME</Link>
           <Link to={"/profile/"+this.props.user}>MY PROFILE</Link>
           <Link to={"/donate/"+this.props.user}>DONATE</Link>
           <Link to={"/volunteer/"+this.props.user}>VOLUNTEER</Link>
-          <Link to={"/"}>SIGNOUT</Link>
+          <Link to={"/signout/"+this.props.user}>SIGNOUT</Link>
       </Menu>
     );
   }
