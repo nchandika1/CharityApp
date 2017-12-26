@@ -4,6 +4,9 @@ import API from "../../utils/API";
 import Navigation from '../../components/Nav';
 import "./Donations.css";
 
+let input;
+
+// Handles all Donations related logic here
 class Donations extends Component {
   state = {
     donations: [],
@@ -11,10 +14,12 @@ class Donations extends Component {
     searchStr: ""
   }
 
+  // When the component mounts, laod all the existing user donations
   componentDidMount = () => {
     this.populateMyDonations(this.props.match.params.userid);
   }
 
+  // This handles input in the Search field
   handleInputChange = event => {
     console.log(event.target.value);
     this.setState({searchStr: event.target.value})
@@ -40,6 +45,7 @@ class Donations extends Component {
           const data = JSON.parse(res.data.body);
           console.log(data.proposals);
           this.populateSearchDonations(data.proposals);
+          input.value = '';
          })
          .catch(err => console.log(err));
      }
@@ -138,7 +144,6 @@ class Donations extends Component {
       });
     });
 
-    console.log("Obj: ", objArray);
     this.setState({donations: objArray});
   }
 
@@ -159,7 +164,6 @@ class Donations extends Component {
   // Main function to render html content on the Donations page!
   render() {
     let userid = this.props.match.params.userid;
-    console.log(`Donations ${userid}`);
     return (
       <div>
         <Navigation user={userid} /> 
@@ -184,7 +188,7 @@ class Donations extends Component {
         <br />
         <div className="headline"> My Search </div>
         <div className="search-button">
-          <input type="text" placeholder="Zip Code" name="searchStr" onChange={this.handleInputChange} value={this.state.searchStr}/>
+          <input ref={node => input=node} type="text" placeholder="Zip Code" name="searchStr" onChange={this.handleInputChange} value={this.state.searchStr}/>
           <button onClick={this.handleSearchDonations}>Search</button>
         </div>
         <div>
