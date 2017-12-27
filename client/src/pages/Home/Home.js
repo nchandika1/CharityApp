@@ -19,7 +19,9 @@ class Home extends React.Component {
 	componentDidMount() {
 		let elem = document.querySelector('body');
 		elem.classList.add('large');
-		if (parseInt(this.props.user)) {
+
+		// ParseInt except radix parameter.  Pass "10" to indicate decimal
+		if (parseInt(this.props.user, 10)) {
 			this.setState({id: this.props.user, loggedIn: true});
 		}
 	}
@@ -38,7 +40,7 @@ class Home extends React.Component {
   render() {
     return (
       <div className="container-fluid">
-      	{this.state.id != '0' ?  (<Users user={this.state.id} />) :    
+      	{parseInt(this.state.id, 10) !== 0 ?  (<Users user={this.state.id} />) :    
       	(<Login loggedIn={this.state.loggedIn} onLoginChange={this.onLogInChange}/>)}      	     
      </div>
   	);

@@ -7,7 +7,12 @@ class Footer extends React.Component {
   render() {
   	return (
     	<div className="footer">
-    		<p>Copyright &#169;2017 Nagarani Chandika and Chamaine Woffard</p>
+    		<p className="left-text">Copyright &#169;2017 Nagarani Chandika and Chamaine Woffard.  All rights reserved.</p>
+    		<p className="right-text"> 
+    			<button>• Privacy </button>
+    			<button>• Terms </button>
+    			<button>• Contact Us </button>
+    		</p>
      	</div>
   	);
  	}

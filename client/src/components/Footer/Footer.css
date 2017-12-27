@@ -7,9 +7,25 @@
 	font-weight: lighter;
 	color: darkgray;
 	text-align: center;
-	font-size: 15px;
+	font-size: 12px;
 	text-align: center;
 	line-height: 40px;
 	bottom:0;
 }
 
+.footer >.left-text {
+	float: left;
+	margin-left: 20px;
+}
+
+.footer >.right-text {
+	float: right;
+	margin-right: 20px;
+}
+
+button {
+	margin: 0 10px;
+	background-color: gray;
+	color: darkgray;
+	border: none;
+}
