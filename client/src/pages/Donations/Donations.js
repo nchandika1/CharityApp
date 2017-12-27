@@ -200,7 +200,7 @@ class Donations extends Component {
                 &#9829;
               </button>
               <div className="search-subtitle">
-                <p>{donation.fulfillmentTrailer}</p>
+                <span>{donation.fulfillmentTrailer}</span>
               </div>
             </div>
           ))
