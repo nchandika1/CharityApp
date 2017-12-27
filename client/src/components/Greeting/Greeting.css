@@ -1,25 +1,15 @@
 .container {
 	margin-left: 40px;
 	margin-right: 40px;
-	background-color: gray;
+	background-color: #3d3a2f;
 	height: 50px;
+	opacity: .7;
 }
 
 .greeting {
-	color: black;
+	color: #fff;
 	line-height: 50px;
 	font-size: 20px;
 	padding: 0 30px;
 	font-family: 'Roboto Condensed';
 }
-
-.greeting-right {
-	color: darkgray;
-	line-height: 50px;
-	font-size: 15px;
-	padding: 0 30px;
-	font-family: 'Roboto Condensed';
-	float: right;
-}
-
-

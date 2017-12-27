@@ -8,7 +8,6 @@ class Greeting extends React.Component {
   	return (
     	<div className="container">
 				<span className="greeting">Welcome {this.props.name}!</span>
-				<span className="greeting-right">Summary of your donations.</span>
 			</div>
   	);
    }
