@@ -1,11 +1,18 @@
 //Dependencies
 import React from "react";
+import "./Signout.css";
+import Navigation from '../../components/Nav';
+
 
 const Signout = (props) => {
 	return(
 		<div>
-			<p>Thank you...</p>
-			<a href="/">Log Me Out</a>
+			<Navigation user={props.match.params.userid} /> 
+			<p>Thank you for generous donations.</p>
+			<p>Please like us on Facebook and leave a review on Yelp</p>
+			<div className="logout">
+				<a href="/">Log Me Out</a>
+			</div>
 		</div>
 		);
 }

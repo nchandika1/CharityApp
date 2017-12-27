@@ -1,0 +1,16 @@
+p {
+	font-family: 'Roboto Condensed', sans-serif;
+	text-align: center;
+}
+
+.logout {
+	font-family: 'Roboto Condensed', sans-serif;
+	border: 2px solid white;
+	background-color: black;
+	color: white;
+	padding: 10px;
+	display: block;
+  margin: auto;
+  width: 10%;
+  text-align: center;
+}
