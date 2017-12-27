@@ -4,12 +4,6 @@
 
 .large {
 	background-image: url('../../assets/images/girls_homeimage.jpg');
-/*	width: 100%;
-	height: 720px;*/
-}
-
-.large2 {
-	background-color: gainsboro;
 }
 
 .image-container {
@@ -19,9 +13,3 @@
 h1 {
 	font-size: 60px;
 }
-
-/*.title {
-	color: #dfc954;
-	font-family: 'Roboto Condensed';
-	margin-left: 25px;
-}*/

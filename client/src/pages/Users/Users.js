@@ -60,7 +60,6 @@ class Users extends Component {
                   :(<p>No Data Available yet</p>)}
                 </div>
                 <div className="row">
-                  <h3>NEWS FEEDS HERE</h3>
                 </div>
               </div>
             ) : (<p>No User</p>)}
