@@ -50,7 +50,7 @@ router.put("/:id", function(req, res) {
 	console.log(`Update for id: ${req.params.id} body: ${req.body}`);
 	db.User
 	  .update(req.body, { where: {id: req.params.id}})
-	  .then(results => res.join(results));
+	  .then(results => res.json(results));
 });
 
 module.exports = router;
