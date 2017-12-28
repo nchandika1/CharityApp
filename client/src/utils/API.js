@@ -17,6 +17,10 @@ export default {
   saveUser: function(userData) {
     return axios.post("/api/users", userData);
   },
+  // Update user profile to the database
+  updateUser: function(userData) {
+    return axios.put("/api/users/" + userData.id, userData);
+  },
   // Get Donations from the database
   searchDonationsByLocation: function(locationData) {
     return axios.post("/api/search/donations", locationData);
