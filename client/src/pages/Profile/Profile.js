@@ -39,9 +39,11 @@ class Profile extends Component {
   		return (
   			<div>
           <Navigation user={this.state.id} />
-	  			<p className="member-info">MEMBER NAME: {this.state.firstName} {this.state.lastName}</p>
-          <p className="member-info">EMAIL: {this.state.email}</p>
-          <p><img src={this.state.image} /></p>
+          <div className="member-info">
+  	  			<p>MEMBER NAME: {this.state.firstName} {this.state.lastName}</p>
+            <p>EMAIL: {this.state.email}</p>
+            <p><img src={this.state.image} /></p>
+          </div>
 	  			<hr />     
           <div>
             <form className="profile-form" onSubmit={this.handleSubmit}>
@@ -81,11 +83,10 @@ class Profile extends Component {
                   type="number" 
                   placeholder="Zip Code" />
               </label>
-              <br />
               <input type="submit" value="Submit" />
             </form>
+            <br />
           </div>
-	  			
   			</div>
   		);
   	}
