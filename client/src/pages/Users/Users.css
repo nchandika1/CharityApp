@@ -1,11 +1,17 @@
-.chart-style {
-	position: relative;
-	margin-top:100px; 
-	height:400px; 
-	width:600px;
-}
+/* Styles specific to Users page are listed here */
 
 .large2 {
 	background-image: url('../../assets/images/walk_woods2.jpg');
 }
 
+.chart-style {
+	margin-top:100px; 
+	height:400px; 
+	width:600px;
+}
+
+.todate {
+	font-family: 'Roboto Condensed', sans-serif;
+	float: right;
+	margin: 60px;
+}

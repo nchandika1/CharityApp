@@ -8,7 +8,8 @@ import "./Users.css";
 class Users extends Component {
   state = {
     user: {}, // Represents user information
-    contrib: [] // Represents annual $$ contributions for this user
+    contrib: [], // Represents annual $$ contributions for this user
+    yearToDate: 0
   };
 
   // Actions when the component mounts
@@ -27,12 +28,20 @@ class Users extends Component {
     API.getAnnualsByUser(user.id)
       .then(res => {
         let annualData = [];
+        let year = (new Date()).getFullYear();
+        let toDate = 0;
         res.data.map(obj => {
           annualData.push({year: obj.year, total: obj.total});
+          if (parseInt(obj.year) === year) {
+            // Save year to date contributions in this variable so 
+            // it is readily available for display
+            toDate = obj.total;
+          }
         }); 
         // Sort by year
         annualData = annualData.sort( (a, b) => (a.year - b.year) );
-        this.setState({user: user, contrib: annualData});
+        
+        this.setState({user: user, contrib: annualData, yearToDate: toDate});
       });
   }
 
@@ -50,17 +59,19 @@ class Users extends Component {
       <div> 
         <Greeting name={`${this.state.user.firstName} ${this.state.user.lastName}`}/> 
         <Navigation user={this.state.user.id} /> 
+        <div className="todate">
+          Your year-to-date contributions: ${this.state.yearToDate}
+        </div>
         <div id="container-fluid">
-          <div className="row">
+          <div>
             {this.state.user ? (
               <div>
-                <div className="row chart-style">
+                <div className="chart-style">
                 {this.state.contrib.length ?
                   (<Chart contrib={this.state.contrib}/>)
                   :(<p>No Data Available yet</p>)}
                 </div>
-                <div className="row">
-                </div>
+                
               </div>
             ) : (<p>No User</p>)}
           </div>  
