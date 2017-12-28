@@ -13,6 +13,9 @@ module.exports = function(sequelize, DataTypes) {
     lastName: {
       type: DataTypes.STRING
     },
+    image: {
+      type: DataTypes.STRING
+    },
     addrLine1: {
       type: DataTypes.STRING
     },

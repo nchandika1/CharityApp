@@ -41,6 +41,7 @@ class Profile extends Component {
           <Navigation user={this.state.id} />
 	  			<p className="member-info">MEMBER NAME: {this.state.firstName} {this.state.lastName}</p>
           <p className="member-info">EMAIL: {this.state.email}</p>
+          <p><img src={this.state.image} /></p>
 	  			<hr />     
           <div>
             <form className="profile-form" onSubmit={this.handleSubmit}>

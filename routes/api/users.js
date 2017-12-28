@@ -28,7 +28,7 @@ router.post("/", function(req, res) {
 	console.log(`Create for body: ${JSON.stringify(req.body)}`);
 	db.User
 	  .findOrCreate({ where: {email: req.body.email}, 
-	  				  defaults: {firstName: req.body.firstName, lastName: req.body.lastName} })
+	  				  defaults: {firstName: req.body.firstName, lastName: req.body.lastName, image: req.body.image} })
 	  .spread((user, created) => {
     		console.log(user.get({plain: true}));
 		    console.log(created);
