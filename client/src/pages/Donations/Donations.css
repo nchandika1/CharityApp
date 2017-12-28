@@ -31,6 +31,20 @@ body {
 	margin: 10px 10px;
 }
 
+.search-button input {
+	font-family: 'Roboto Condensed', sans-serif;
+	margin-top: 5px;
+  margin-bottom: 10px;
+  width: 200px;
+  border: 2px solid #dfc954;
+}
+
+.search-button input[type=submit] {
+	border: 2px solid green;
+	font-weight: bold;
+	width: 100px;
+}
+
 .no-search {
 	text-align: center;
 	color: lightgray;

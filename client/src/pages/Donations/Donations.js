@@ -187,10 +187,15 @@ class Donations extends Component {
         )}
         <br />
         <div className="headline"> My Search </div>
-        <div className="search-button">
-          <input ref={node => input=node} type="text" placeholder="Zip Code" name="searchStr" onChange={this.handleInputChange} value={this.state.searchStr}/>
-          <button onClick={this.handleSearchDonations}>Search</button>
-        </div>
+        <form className="search-button" onSubmit={this.handleSearchDonations}>
+          <input 
+            type="text" 
+            placeholder="Zip Code" 
+            name="searchStr" 
+            onChange={this.handleInputChange} 
+            value={this.state.searchStr} />
+          <input type="submit" value="Submit" />
+        </form>
         <div>
         { this.state.donations.length ?
           (this.state.donations.map(donation => 
