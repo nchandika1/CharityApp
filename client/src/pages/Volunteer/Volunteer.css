@@ -1,9 +1,9 @@
 .account-welcome {
-	background-color: #000;
 	opacity: .7;
 	height: 80px;
 	font-family: 'Roboto Condensed', sans-serif;
 	text-align: center;
-	font-size: 60px;
+	font-size: 30px;
 	color: #fff;
+	margin-top: 50px;
 }
