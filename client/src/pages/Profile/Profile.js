@@ -26,25 +26,25 @@ class Profile extends Component {
     });
   }
 
-	componentDidMount() {
-		API.getUser(this.props.match.params.userid)
+  componentDidMount() {
+    API.getUser(this.props.match.params.userid)
       .then(res => {
           this.setState(res.data);
         }
       );
-	}
+  }
 
   render() {
-  	if (this.state) {
-  		return (
-  			<div>
+    if (this.state) {
+      return (
+        <div>
           <Navigation user={this.state.id} />
+          <div className="account-welcome">ACCOUNT INFORMATION</div>
           <div className="member-info">
-  	  			<p>MEMBER NAME: {this.state.firstName} {this.state.lastName}</p>
+            <span><img src={this.state.image} /> MEMBER NAME: {this.state.firstName} {this.state.lastName}</span>
             <p>EMAIL: {this.state.email}</p>
-            <p><img src={this.state.image} /></p>
           </div>
-	  			<hr />     
+          <hr />     
           <div>
             <form className="profile-form" onSubmit={this.handleSubmit}>
               <label>
@@ -87,10 +87,10 @@ class Profile extends Component {
             </form>
             <br />
           </div>
-  			</div>
-  		);
-  	}
-	 	return(<p>No Profile information available for this user!</p>);
+        </div>
+      );
+    }
+    return(<p>No Profile information available for this user!</p>);
   }
 }
 
