@@ -45,7 +45,7 @@ class Donations extends Component {
           const data = JSON.parse(res.data.body);
           console.log(data.proposals);
           this.populateSearchDonations(data.proposals);
-          input.value = '';
+          this.setState({searchStr: ''});
          })
          .catch(err => console.log(err));
      }
