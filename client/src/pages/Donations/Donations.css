@@ -29,9 +29,13 @@ body {
 	margin-top: 5px;
 }
 
-.donation-subtitle, .search-subtitle {
-	font-size: 16px;
+.donation-subtitle {
+	font-size: 14px;
 	margin-left: 10px;
+}
+
+.search-subtitle {
+	font-size: 14px;
 }
 
 .search-button {
