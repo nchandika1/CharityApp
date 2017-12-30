@@ -168,7 +168,7 @@ class Donations extends Component {
       <div>
         <Navigation user={userid} /> 
         <br />
-        <div className="headline"> My Donations </div>
+        <div className="headline"> MY DONATIONS </div>
         <br />
         {this.state.myDonations.map((donation, i) =>
           <div key={i} >
@@ -186,7 +186,7 @@ class Donations extends Component {
           </div>
         )}
         <br />
-        <div className="headline"> My Search </div>
+        <div className="headline"> MY SEARCHES </div>
         <form className="search-button" onSubmit={this.handleSearchDonations}>
           <input 
             type="text" 
@@ -209,7 +209,7 @@ class Donations extends Component {
               </div>
             </div>
           ))
-          : ( <div className="no-search">Type in ZipCode to display Donations by Loation</div>) }
+          : ( <div className="no-search">Type in ZipCode to display Donations by Location</div>) }
         </div>
       </div>
     );
