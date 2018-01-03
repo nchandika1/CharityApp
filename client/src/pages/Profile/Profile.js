@@ -39,16 +39,19 @@ class Profile extends Component {
       return (
         <div>
           <Navigation user={this.state.id} />
-          <div className="account-welcome">ACCOUNT INFORMATION</div>
-          <div className="member-info">
-            <span><img src={this.state.image} /> MEMBER NAME: {this.state.firstName} {this.state.lastName}</span>
-            <p>EMAIL: {this.state.email}</p>
+          <div className="account-welcome">
+            <h3>ACCOUNT INFORMATION</h3>
           </div>
           <hr />     
+          <div className="member-info">
+            <span><img src={this.state.image} /> 
+              <br />MEMBER NAME: {this.state.firstName} {this.state.lastName}
+              <br />EMAIL: {this.state.email}
+            </span>
+          </div>
           <div>
             <form className="profile-form" onSubmit={this.handleSubmit}>
               <label>
-                Address Line 1:
                 <input 
                   name="addrLine1" 
                   value={this.state.addrLine1 ? this.state.addrLine1 : ''} 
@@ -57,7 +60,6 @@ class Profile extends Component {
                   placeholder="Address Line 1" />
               </label>
               <label>
-                City:
                 <input 
                   name="city" 
                   value={this.state.city ? this.state.city : ''} 
@@ -66,7 +68,6 @@ class Profile extends Component {
                   placeholder="City" />
               </label>
               <label>
-                State: 
                 <input 
                   name="state" 
                   value={this.state.state ? this.state.state : ''} 
@@ -75,7 +76,6 @@ class Profile extends Component {
                   placeholder="State" />
               </label>
               <label>
-                Zip Code: 
                 <input 
                   name="zipCode" 
                   value={this.state.zipCode} 
