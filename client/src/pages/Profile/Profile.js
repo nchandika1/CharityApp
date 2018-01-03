@@ -80,7 +80,7 @@ class Profile extends Component {
                   name="zipCode" 
                   value={this.state.zipCode} 
                   onChange={this.handleChange} 
-                  type="number" 
+                  type="text" 
                   placeholder="Zip Code" />
               </label>
               <input type="submit" value="Submit" />

@@ -26,8 +26,8 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING,
     },
     zipCode: {
-      type: DataTypes.INTEGER,
-      defaultValue: 0
+      type: DataTypes.STRING,
+      defaultValue: ''
     }
   });
 
