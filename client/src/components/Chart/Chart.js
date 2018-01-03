@@ -19,8 +19,13 @@ class Chart extends Component {
 		});
 
 		//  Only chart recent 5 years 
-		x.splice(5);
-		y.splice(5);
+		if (props.contrib.length > 5) {
+			let delItems = props.contrib.length - 5;
+			for (let i=1;i<= delItems;i++) {
+				x.shift();
+				y.shift();
+			}
+		}
 
 		// store data for X and Y axis to be used for charting
 		this.state = {

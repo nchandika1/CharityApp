@@ -18,7 +18,7 @@ class Volunteer extends Component {
   render() {
     return (
       <div>
-      	<Navigation />
+      	<Navigation user={this.props.match.params.userid} /> 
       	<div className="account-welcome">VOLUNTEER HOURS COMING SOON!</div>
       </div>    
     );
