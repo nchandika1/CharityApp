@@ -17,6 +17,8 @@ class Profile extends Component {
   handleSubmit(e) {
     e.preventDefault();
     API.updateUser(this.state);
+    let saved = document.getElementById("savedText");
+    saved.innerText = "Saved!"
   }
 
   handleChange(e) {
@@ -32,6 +34,8 @@ class Profile extends Component {
           this.setState(res.data);
         }
       );
+    let saved = document.getElementById("savedText");
+    saved.innerText = "";
   }
 
   render() {
@@ -84,6 +88,7 @@ class Profile extends Component {
                   placeholder="Zip Code" />
               </label>
               <input type="submit" value="Submit" />
+              <span id="savedText"></span>
             </form>
             <br />
           </div>

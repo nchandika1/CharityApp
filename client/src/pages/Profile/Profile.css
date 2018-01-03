@@ -43,3 +43,11 @@
   	min-width: 100px;	
 		color: #ff0000;
 }
+
+#savedText {
+	font-family: 'Roboto Condensed', sans-serif;
+	display: block;
+  margin-top: 20px;
+  margin-bottom: 2px;
+  margin-left: 30px; 
+}
