@@ -45,8 +45,7 @@ class Profile extends Component {
           <Navigation user={this.state.id} />
           <div className="account-welcome">
             <h3>ACCOUNT INFORMATION</h3>
-          </div>
-          <hr />     
+          </div>    
           <div className="member-info">
             <span><img src={this.state.image} /> 
               <br />MEMBER NAME: {this.state.firstName} {this.state.lastName}
