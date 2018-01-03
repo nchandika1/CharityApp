@@ -64,9 +64,8 @@ body {
 }
 
 .no-search {
-	text-align: center;
 	color: lightgray;
-	margin: 30px 0;
+	margin: 30px 100px;
 }
 
 .favorite-icon {
