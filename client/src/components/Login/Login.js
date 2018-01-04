@@ -35,6 +35,7 @@ class Login extends React.Component{
 	          <GoogleLogin socialId="30112038592-893k01ohoonmndj1snfrndf50dp05sf5.apps.googleusercontent.com"
 	                       className="Google-Login"
 	                       scope="profile"
+                         redirect_uri="https://shielded-retreat-54823.herokuapp.com"
 	                       fetchBasicProfile={true}
 	                       responseHandler={this.responseGoogle}
 	                       buttonText="Continue With Google" />
