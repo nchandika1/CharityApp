@@ -32,7 +32,7 @@ class Login extends React.Component{
       <div className="container-fluid">
         <div id="Modal">
 	        <div>
-	          <GoogleLogin socialId="30112038592-893k01ohoonmndj1snfrndf50dp05sf5.apps.googleusercontent.com"
+	          <GoogleLogin socialId="922886755402-9ep8flv0f4upesth6smas38d6cuo7h4k.apps.googleusercontent.com"
 	                       className="Google-Login"
 	                       scope="profile"
 	                       fetchBasicProfile={true}
